@@ -1,7 +1,8 @@
 import React from "react";
 import { CardList } from "./CardList";
 import SearchBar from "./SearchBar";
-import Scroll from './Scroll';
+import Scroll from "./Scroll";
+import ErrorBoundaryContainer from "./ErrorBoundaryContainer";
 //import { robots } from "./robots";
 
 class App extends React.Component {
@@ -52,7 +53,9 @@ class App extends React.Component {
         <h1 className="tc fw7 f-5 washed-green">Robot Yellowpages</h1>
         <SearchBar filterFunction={this.filterRobots} />
         <Scroll>
-          <CardList robots={this.state.filteredRobots} />
+          <ErrorBoundaryContainer>
+            <CardList robots={this.state.filteredRobots} />
+          </ErrorBoundaryContainer>
         </Scroll>
       </div>
     );
