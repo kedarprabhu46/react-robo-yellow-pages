@@ -1,8 +1,8 @@
 import React from "react";
-import { CardList } from "./CardList";
-import SearchBar from "./SearchBar";
-import Scroll from "./Scroll";
-import ErrorBoundaryContainer from "./ErrorBoundaryContainer";
+import { CardList } from "../components/CardList";
+import SearchBar from "../components/SearchBar";
+import Scroll from "../components/Scroll";
+import ErrorBoundaryContainer from "../components/ErrorBoundaryContainer";
 //import { robots } from "./robots";
 
 class App extends React.Component {
@@ -28,7 +28,7 @@ class App extends React.Component {
       }); //1127
   }
 
-  filterRobots = (event) => {
+  filterRobots = (event,receiveddata) => {
     //console.log(event.target.value);
     this.setState(
       {
