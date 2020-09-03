@@ -4,6 +4,7 @@ const initialState = {
   searchfield: "",
 };
 
+//define multiple reducers each with multiple actions
 export const searchRobots = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_SEARCH_FIELD: {

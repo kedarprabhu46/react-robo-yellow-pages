@@ -4,7 +4,13 @@ import "./index.css";
 import App from "./container/App"
 import * as serviceWorker from "./serviceWorker";
 import "tachyons"
+import {Provider,connect} from "react-redux";
+import {createStore} from "redux";
+import { searchRobots } from "./reducers";
 
+
+
+const store = createStore(searchRobots);  //create store with all the reducers
 // ReactDOM.render(
 //   <div >
 //     <React.StrictMode>
@@ -28,7 +34,7 @@ import "tachyons"
 //   document.getElementById("root")
 // );
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById("root"));//pass store down the line using provider
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
